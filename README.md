@@ -1,7 +1,7 @@
 # airchain-checker
 
 ```console
-git clone git@github.com:0xsaeed/airchain-checker.git && cd airchain-checker
+git clone https://github.com/0xsaeed/airchain-checker.git && cd airchain-checker
 ```
 
 ```console
