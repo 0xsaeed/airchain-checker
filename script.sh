@@ -17,19 +17,19 @@ failed_verify_string="Failed to Transact Verify pod"
 vrf_validate_string="Failed to Validate VRF"
 vrf_record_string="VRF record is nil"
 vrf_init_string="Failed to Init VRF"
+vrf_validat_tx_string="Error in ValidateVRF transaction"
 
 # rate_limit_error_string="rpc error: code = ResourceExhausted desc = request ratelimited"  # Rate limit error string to search for
 # gin_string="GIN"
 
 error_to_restart="$verify_pod_error_string"
-error_to_rollback="$gas_string|$client_error_string|$balance_error_string|$failed_verify_string|$vrf_validate_string|$vrf_record_string|$vrf_init_string"
+error_to_rollback="$gas_string|$client_error_string|$balance_error_string|$failed_verify_string|$vrf_validate_string|$vrf_record_string|$vrf_init_string|$vrf_validat_tx_string"
 
 # List of unique RPC URLs
 unique_urls=(
 
   "https://airchains-testnet-rpc.crouton.digital/"
   "https://airchains-rpc.sbgid.com/"
-  "https://junction-testnet-rpc.nodesync.top/"
 )
 
 # Function to log a message with date and time
