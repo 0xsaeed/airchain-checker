@@ -6,7 +6,7 @@ restart_delay=300  # Restart delay in seconds
 config_file="$HOME/.tracks/config/sequencer.toml"
 # Initialize the counter
 counter=0
-
+max_retries=8
 retry_transaction_string="Retrying the transaction after 10 seconds..."  # Retry transaction string to search for
 verify_pod_error_string="Error in VerifyPod transaction Error" # New VerifyPod error string to search for
 
@@ -79,7 +79,7 @@ while true; do
     ((counter++))
     log_with_date "Found retry transaction string in logs. Retry attempt: $counter"
     sleep "$restart_delay"
-    if [[ $counter -gt 5 ]]; then
+    if [[ $counter -gt $max_retries ]]; then
       log_with_date "Max retry attempts reached. Restarting the service."
       update_rpc_url
       systemctl restart "$service_name"
